@@ -1,0 +1,230 @@
+  <!--HEADER SECTION-->
+  <header id="home-section">
+    <div class="dark-overlay">
+      <div class="home-inner">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-lg-12 col-md-8 col-sm-6 col-xs-4">
+              <div class="form-wrapper">
+                <div class="card">
+                  <div class="container">
+                    <form #formForm="ngForm" (ngSubmit)="onSubmit(formForm)">
+                    <div class="row">
+                      <div class="col-lg-6 login-form">
+
+                          <div class="pgone">
+                          <h4 class="text-center mt-2 text-success">SME Loan Form</h4>
+                          <div class="row">
+                            <div class="col col-lg-6 col-md-6 col-sm-4">
+                              <div class="form-group">
+                                <label for="firstName" class="text-success">First Name</label>
+                                <input
+                                type="text"
+                                class="form-control"
+                                name="firstName"
+                                #formFirstName="ngModel"
+                                placeholder="John"
+                                [ngClass]="{'is-invalid' : formFirstName.errors && formFirstName.touched}"
+                                [(ngModel)]="form.firstName"
+                                minlength="2"
+                                required
+                                >
+                                <div [hidden]="!formFirstName.errors?.required" class="invalid-feedback">
+                                  First name required
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col col-lg-6 col-md-6 col-sm-4">
+                              <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Doe"
+                                name="lastName"
+                                #formLastName="ngModel"
+                                [ngClass]="{'is-invalid' : formLastName?.errors && formLastName?.touched}"
+                                [(ngModel)]="form.lastName"
+                                required
+                                >
+                                <div [hidden]="!formLastName.errors?.required" class="invalid-feedback">
+                                  Last name required
+                                </div>
+
+                              </div>
+                           </div>
+                          </div>
+                         <div class="form-group">
+                           <label for="id_number" class="text-success">ID Number</label>
+                           <input
+                           type="text"
+                           class="form-control"
+                           placeholder="12345677"
+                           name="nationalId"
+                           #formNationalId="ngModel"
+                           [ngClass]="{'is-invalid' : formNationalId?.errors && formNationalId?.touched}"
+                           [(ngModel)]="form.nationalId"
+                           required
+                           >
+                           <div [hidden]="!formNationalId.errors?.required" class="invalid-feedback">
+                            ID required
+                          </div>
+                         </div>
+
+
+                         <div class="form-group">
+                           <label for="email" class="text-success">Email:</label>
+                           <input
+                           type="email"
+                           class="form-control"
+                           placeholder="abc@gmail.com"
+                           name="email"
+                           #formEmail="ngModel"
+                           [ngClass]="{'is-invalid' : formEmail.errors && formEmail.touched}"
+                           [(ngModel)]="form.email"
+                           pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                            required
+                            >
+                            <div [hidden]="!formEmail.errors?.required" class="invalid-feedback">
+                              Email required
+                            </div>
+
+                            <div [hidden]="!formEmail.errors?.pattern" class="invalid-feedback">
+                                Email is not valid
+                              </div>
+                         </div>
+
+
+                          </div>
+
+                      </div>
+                      <div class="col-lg-6 bg-success right-div pt-4 text-white">
+
+                        <div id="pgthree" >
+                          <div class="row">
+                            <div class="col col-lg-6 col-md-6 col-sm-4">
+                              <div class="form-group">
+                                <label for="phone" class="text-white">Phone Number:</label>
+                                <input
+                                type="text"
+                                class="form-control"
+                                name="phone"
+                                placeholder="0799999999"
+                                #formPhone="ngModel"
+                                [ngClass]="{'is-invalid' : formPhone.errors && formPhone.touched}"
+                                [(ngModel)]="form.phone"
+                                minlength="10"
+                                required
+                                >
+                                <div [hidden]="!formPhone.errors?.required" class="invalid-feedback">
+                                  Phone is required
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col col-lg-6 col-md-6 col-sm-4">
+                              <div class="form-group">
+                                <label for="kra_pin" class="text-white">KRA Pin:</label>
+                                <input
+                                type="text"
+                                class="form-control"
+                                placeholder="A00565GYUYGJH"
+                                name="kraPin"
+                                #formKRA="ngModel"
+                                [ngClass]="{'is-invalid' : formKRA?.errors && formKRA?.touched}"
+                                [(ngModel)]="form.kraPin"
+                                required
+                                >
+                                <div [hidden]="!formKRA.errors?.required" class="invalid-feedback">
+                                  KRA pin required
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                         <div class="row">
+                          <div class="col col-lg-6 col-md-6 col-xs-2">
+                            <div class="form-group">
+                              <label for="company_name" class="text-white">Company Name</label>
+                              <input
+                              type="text"
+                              class="form-control"
+                              placeholder="ABC Limited"
+                              name="companyName"
+                              #formCname="ngModel"
+                              [ngClass]="{'is-invalid' : formCname?.errors && formCname?.touched}"
+                              [(ngModel)]="form.companyName"
+                              required
+                            >
+                            <div [hidden]="!formCname.errors?.required" class="invalid-feedback">
+                              Company name required
+                            </div>
+
+                            </div>
+                          </div>
+
+                           <div class="col col-lg-6 col-md-6 col-xs-2">
+                            <div class="form-group">
+                              <label for="location" class="text-white">Location</label>
+                              <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Nairobi"
+                              name="companyLocation"
+                              #formClocation="ngModel"
+                              [ngClass]="{'is-invalid' : formClocation?.errors && formClocation?.touched}"
+                              [(ngModel)]="form.companyLocation"
+                              required
+                              >
+                              <div [hidden]="!formClocation.errors?.required" class="invalid-feedback">
+                                Location required
+                              </div>
+                            </div>
+                           </div>
+
+
+                         </div>
+
+                         <div class="form-group">
+                           <label for="revenue" class="text-white">Revenue:</label>
+                           <input
+                           type="text"
+                           class="form-control"
+                           placeholder="sh 845786 p/a"
+                           name="companyRevenue"
+                           #formCrevenue="ngModel"
+                           [ngClass]="{'is-invalid' : formCrevenue?.errors && formCrevenue?.touched}"
+                           [(ngModel)]="form.companyRevenue"
+                           required
+                           >
+                           <div [hidden]="!formCrevenue.errors?.required" class="invalid-feedback">
+                            Revenue required
+                          </div>
+                         </div>
+
+                          <input type="submit" value="SUBMIT" class="btn btn-success btn-block">
+
+                        </div>
+
+
+                      </div>
+
+                     <!-- n -->
+                    </div>
+                  </form>
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+
+
+      </div>
+    </div>
+  </header>
+

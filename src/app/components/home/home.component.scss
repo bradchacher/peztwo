@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+$bg-color:#333;
+$font-color:rgb(255, 255, 255);
+$primary-color:#008ed6;
+$dark-overlay: rgba(0,0,0,0.7);
+$icon-size:30px;
+.alert p {
+  margin:0;
+  padding: 0;
+}
+
+
+#home-section{
+  background:url('../../../img/home.jpg') no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+  min-height:820px;
+  color: #fff;
+
+
+  .dark-overlay{
+    height: 95vh;
+    background-size: cover;
+    background-color:$dark-overlay;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    min-height: 100%;
+  }
+
+  .home-inner{
+    padding-top:150px;
+  }
+
+  .card-form{
+    opacity:0.8;
+  }
+
+  .fa{
+    color:$primary-color;
+    background:#fff;
+    padding:4px;
+    border-radius:5px;
+    font-size:$icon-size;
+  }
+
+  .form-wrapper {
+    margin-top: auto;
+    margin-left: auto;
+    height: auto;
+  }
+  .card {
+    height: 400px;
+  }
+  .login-form{
+    padding-top: 10px;
+  }
+  .btn {
+    border-radius: 30px;
+  }
+  .right-div{
+    height: 400px;
+  }
+  .register-btn{
+    border: 1px solid #fff;
+  }
+  .alert p {
+    margin:0;
+    padding: 0;
+  }
+}

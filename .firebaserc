@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pezesha-form": {
+      "hosting": {
+        "pezeshatwo": [
+          "pezesha-form"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pezesha-form"
+  }
+}
